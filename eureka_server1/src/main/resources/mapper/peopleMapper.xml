@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="dao.peopledao">
+ 
+ 	
+ 	
+ 	<select id="findall" resultType="people">
+ 		select * from people
+ 	</select>
+ 	
+ 	<select id="findpassword" parameterType="String" resultType="people">
+ 		select * from people where name=#{name}
+ 	</select>
+ 	<!--  
+ 	<insert id="insert" parameterType="people">
+ 		insert into people values (id=#{id},idcard=#{idcard},name=#{name},age=#{age},sex=#{sex},money=#{money})
+ 	</insert>
+ 	-->
+ </mapper>
+ 
+ 
+
+ 
+ 
