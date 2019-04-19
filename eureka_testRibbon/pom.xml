@@ -28,7 +28,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		<dependency>
+		<dependency> <!-- 负载均衡依赖 -->
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
 		</dependency>
@@ -37,6 +37,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-devtools</artifactId>
         <optional>true</optional>
+		</dependency>
+		
+		<dependency> <!-- hystrix容错保护依赖 -->
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-hystrix</artifactId>
+		    <version>1.4.6.RELEASE</version>
 		</dependency>
 		
 		<dependency>
