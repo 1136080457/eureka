@@ -15,18 +15,18 @@ public class filter extends ZuulFilter{
 	}
 
 	@Override
-	public Object run() throws ZuulException {
+	public Object run()  {
 		// 所需要执行过滤的具体操作
-		RequestContext rc = RequestContext.getCurrentContext();
-		rc.setResponseStatusCode(200);
-		
-		try {
-			rc.getResponse().sendRedirect("http://127.0.0.1:1111/findall");
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		RequestContext rc = RequestContext.getCurrentContext();
+//		rc.setResponseStatusCode(200);
+//		
+//		try {
+//			rc.getResponse().sendRedirect("http://127.0.0.1:1111/findall");
+//			
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return null;
 	}
 

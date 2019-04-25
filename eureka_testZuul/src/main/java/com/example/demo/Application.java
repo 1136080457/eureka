@@ -32,4 +32,10 @@ public class Application {
 		
 		return "welcoming ~~~";
 	}
+	
+	@RequestMapping("findall")
+	public String findall() {
+		
+		return "findall ~~~";
+	}
 }
