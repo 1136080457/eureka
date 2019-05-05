@@ -17,11 +17,11 @@ public class serviceRibbon {
 	  
 	  @RequestMapping("welcome") 
 	  public String testRibbon() {
-	  //根据从eureka服务列表里发现的服务名去调用对应的方法(此URL是服务列表名/请求方法)，默认是轮询 
+	  //根据从eureka服务列表里发现的服务名去调用对应的方法(此URL是服务列表名/请求方法;通常这样会找到多个方法，具体如何调用，就看当前的策略)，默认是轮询 
 		  return rest.getForObject("http://Ribbon-test/welcome", String.class); 
 	  }
 	
-	 @HystrixCommand(fallbackMethod="Hystrixfallback")//调用的服务挂掉或是出错后，会调用例外一个配置的方法
+	 @HystrixCommand(fallbackMethod="Hystrixfallback")//调用的服务挂掉或是出错后，会调用另外一个配置的方法
 	@RequestMapping("testHystrix")
 	public String testHystrix() {
 		
