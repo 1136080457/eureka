@@ -34,7 +34,7 @@
         <optional>true</optional>
 		</dependency>
 		
-		<dependency>
+		<dependency> <!-- zuul网关依赖 -->
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-zuul</artifactId>
 		    <version>1.4.6.RELEASE</version>

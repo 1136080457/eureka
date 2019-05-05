@@ -8,6 +8,9 @@ import com.netflix.zuul.exception.ZuulException;
 
 public class filter extends ZuulFilter{
 
+	//自定义过滤器
+	
+	
 	@Override
 	public boolean shouldFilter() {
 		// 是否需要执行该过滤器

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableEurekaClient
-@EnableZuulProxy
+@EnableEurekaClient   //发现服务
+@EnableZuulProxy  //开启zuul网关
 public class Application {
 
 	
@@ -22,20 +22,12 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 	
-	@Bean
-    public filter accessFilter() {
-        return new filter();
-    }
-
-	@RequestMapping("welcoming")
-	public String welcoming() {
-		
-		return "welcoming ~~~";
-	}
 	
-	@RequestMapping("findall")
-	public String findall() {
-		
-		return "findall ~~~";
-	}
+	
+//	@Bean   //filter为自定义的过滤器
+//    public filter accessFilter() {
+//        return new filter();
+//    }
+//	
+
 }
