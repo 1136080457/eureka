@@ -1,0 +1,67 @@
+
+	1.html：超文本标记语言，与平台无关，不区分大小写；<h1>到<h6>：表示标题；<p>段落；<hr/>水平线；<sup>上标；<sub>下标；<br/>换行；
+       <pre>原样标签(只保留空格和换行)；<ol><li>有序的列表标签；<ul><li>无序的列表标签；<dl>项目标签；<span>行内标签；<div>块标签(默认没有边框)；	实体标签；<embed>媒体标签；<marquee>飘动标签；<a>超链接标签；<img>图片标签；<table>表格标签；
+        <frameset>框架标签可以切割，<frame>不可以切割，框架不能和<body>一起使用；<iframe>行内框架；
+	<form></form>表单:<input type="text"/>文本框，<input type="password"/>密码输入框，<input name="组名" type="rdio"/>单选框
+	<select><option>元素<option></select>下拉框，<input type="checkbox"/>多选框，<input type="file"/>大头照，
+        <textarea></textarea>文本域，<input type="submit" value=""/>提交按钮，<input type="reset" value="">重置按钮,
+	action:表单用来指定提交地址的属性，普通标签有name属性的才能提交出去，单选框和多选框提交的是value值：
+	get:提交敏感数据时不安全：会将提交的内容显示在浏览器的地址栏，受地址栏限制大小不能超过1kb
+	post:提交敏感数据时更安全：提交的数据不会显示在浏览器地址栏，不会受地址栏限制
+
+	2.css:（1）<style type="text/css"></style>;(2)<link href="" rel="stylesheet">或者<style type="textcss">@import url("");</style>
+	(4)在body的某个标签中加style=""属性(只能用于本标签)；推荐使用(2);
+	标签选择器：标签名{ }；类选择器：.class名{ }，类名不能以数字开头，类选择器的样式优先于标签选择器的样式；
+	id选择器：#id名{ },不能是数字开头，优先于标签和类选择器；交集选择器：选择器1 选择器2{ }，作用于相交的部分；并集选择器:选择器1，...{ }；
+	通用选择器：*{ }，作用于整个；伪类选择器：标签的状态{ },注意状态的顺序；
+	padding：内边距(相对于外层边框的距离)；margin：外边距(当前元素的边框与同一层边框内另一个元素边框的距离)；
+	position：relative相对位置；absolute绝对位置(对于整个页面)；fixed固定定位(相对于当前页面的位置)
+	
+        3.JavaScript:跨平台，安全性，解释型语言，弱类型语言，而Java是解释编译型并且是强类型语言,后缀是.js
+	格式：<script type="text/javascript">代码</script>；或者<script src="引入的js页面" type="text/javascript">这里不能写js代码了</script>；
+	var可以声明任意类型的变量，可以省略不写，可以重复声明变量，后者覆盖前者的值；与数字运算时，true是1，false是0；NaN,不是一个数字；基本数据		类型只有数字、字符串和Boolean类型；没有单&和单|；在if的条件语句中，数字类型0代表false,其他为true,NaN为false,undefined代表false；
+	switch中的case可以是常量、变量和表达式；for-in语句，把增强for循环的：换成in即可，遍历的是数组的下标，还可以遍历对象的所有属性，遍历出来的		是对象的属性；with(重复的代码){},在存取对象属性和调用方法时就不用重复指定对象；函数function的形参不能写var，可以直接写返回值；没有函数的		重载，调用时会调用最后一个同名的函数；任何函数内部都有隐藏的arguments的数组，调用函数的时候传入的参数先给它，它再给函数的形参去使用；
+        数组的长度可以发生改变，排序的时候要传入自己写的排序的方法；prototype：每个函数都有此属性，它的值是一个对象，可以任意修改此属性的值，函数            的每个对象都有prototype的所有属性和方法；使用window对象的方法和属性时，可以省略window；
+	BOM:浏览器对象模型，JavaScript是由浏览器内置的JavaScript脚本解释器来执行的，JavaScript封装了浏览器的各个对象，从而可以操作浏览器。
+	DOM:文档对象模型，一个html页面加载的时候，浏览器会对所有的标签创建一个对应的对象，浏览器上显示的是这些对象的属性，我们可以操作这些对象，来改         变浏览器显示的内容，从而操作网页。
+         文本节点类型是3，注释节点类型是8，标签节点类型是1；可以通过标签对象.style来设置该标签的css样式；
+         表单的onsubmit返回值是true，才能提交；否则不能提交；
+
+        3.XML:用于存储数据和配置文件
+         (1)可拓展标签语言，后缀名为xml，区分大小写，标签名不能使用空格、数字开头，属性值用''或""，并且不能省略，一个标签内属性名不能重复，一个xml文            档有且仅有一个根标签，注意保存格式和提醒解析的格式；CDATA块：内容原样输出
+         (2)DOM：xml解析器将xml文件封装为一个document对象，可以通过此对象获得xml的信息；注意xml文本的空格和换行也是文本内容；读取的时候一次性加载到内          存中，对内存要求较高。可以任意增删改查，读取任意位置，甚至往回读，面向对象的编程。(dom4j-1.6.1.jar)
+          (3)SAX:加载一点，读取一点，处理一点，读内存要求较低。只能从上往下顺序读取，基于事件的编程方法。
+          (4)DTD约束：规范xml文档的内容格式，一个标签只能受到一个约束；后缀是dtd
+          (5)Schema：规范xml文档的内容格式，比DTD更加复杂，一个标签可以受到多个约束；后缀是xsd
+
+	4.XPath:在xml文档中查找信息的语言，主要用于快速获取所需的节点对象(jaxen-1.1-bet-6.jar)
+           (1):/分子父层次的结构；//不分层次结构；*当前层次下的所有；[index]当前层次下的第index个；@当前层次下的属性；and并且；text()文本；
+
+	5.tomacat:web服务器软件，纯Java软件，webapps目录下不能共享单个文件，需要共享一个文件夹；
+
+	6.Servlet:属于JavaEE，Java语言编写的动态资源开发技术，是一个普通的Java类，继承HttpServlet，由服务器调用；
+        生命周期：servlet对象创建，ini(）方法，service()方法，destroy()方法；可以将对象创建提前至服务器启动时，在web配置文件中加<load-on-startup>1<>；
+	servlet是单实例多线程的，注意对共享数据加锁或其它处理；
+
+	7.JSP：也是servlet，用java+html开发动态资源的技术；通过服务器访问
+         生命周期：把jsp文件翻译成Java文件，把Java文件编译成class文件，之后就和servlet的生命周期类似；
+         EL表达式：jsp的el,替代jsp的表达式
+
+        8.JSTL：jsp标准标签库，替代jsp脚本
+
+        9.JDBC：一套通用的Java语言操作不同数据库的接口
+
+         10.过滤器：(特殊的servlet)拦截指定的内容，可以对其进行处理；一个类实现filter接口，在web.xml中配置即可
+
+         11.监听器：属于servlet,普通的类继承需要的监听器接口，在web.xml中配置即可
+
+         12.Struts2:Struts2的默认访问后缀是action ，Struts1是do；Struts2多了xwork的支持；Struts2有32个拦截器，一个默认的拦截栈，有18个拦截器；
+          Struts2的访问路径：项目名/Struts.xml中配置的名称空间(默认为/)/./../action名称，服务器会从...中一级一级往上找，如果到名称空间这里还没有找到，就报错；
+          拦截器的执行流程(生命周期)：服务器启动->创建所有的拦截器、执行init()方法->创建acting实例->按顺序执行拦截器->拦截器放行，执行action中的对应方法->倒序返回拦截器->服务器->浏览器响应(服务器关闭，拦截器销毁)；
+         数据回显：其实就是将数据用值栈对象存储，变为根元素，页面取值的时候直接用名字就可以获取到值；
+         防止表单重复提交(可以使用重定向也可以使用下面的Struts配置)：1.在这个表单页面中加入s:token标签，生成客户端和服务器端的唯一编号；2.在Struts中配置一个拦截器(
+         <interceptor-ref name="defaultStack"></interceptor-ref>
+         <interceptor-ref name="token">
+	 <param name="includeMethods">xxx</param><!-- 指定拦截的方法需要防止表单重复提交(xxx) -->
+         </interceptor-ref>)
+          3.在Struts中配置invalid.token页面<result name="invalid.token">xxx</result> ；
