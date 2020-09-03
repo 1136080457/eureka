@@ -20,5 +20,9 @@ public class people {
 	private char Sex;
 	private Integer Money;
 	private String Password;
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
